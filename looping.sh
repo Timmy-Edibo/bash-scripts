@@ -12,6 +12,13 @@ do
 done    
 
 
+# Method 2
+for i in {1..100..2}
+do
+    echo $i
+done    
+
+
 #Loop without a skip
 for ((i=1; i<100; i++))
 do
