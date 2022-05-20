@@ -1,5 +1,6 @@
 #! /bin/bash
 
+#https://github.com/Timmy-Edibo/bash-scripts
 
 #shell script to find average of n numbers
   
