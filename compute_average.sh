@@ -7,40 +7,90 @@
 #  Method 1
 
 echo "Enter Size(N)"
-read N
+read input
 
-count=1
-sum=0
+if [ $input -le 500 ]
+then
+  count=1
+  sum=0
 
-echo "Enter Numbers"
-while [ $count -le $N ]
-do
-  read num               #get number
-  sum=$((sum + num))     #sum+=num
-  count=$((count + 1))
-done
+  echo "Enter Numbers"
 
-avg=$(echo $sum / $N | bc -l)
+  function validate(){
+      while [ $count -le $input ]
+      do
+        read num               #get number
+        sum=$((sum + num))     #sum+=num
+        count=$((count + 1))
+      done
+    # bc: basic calculator for arithematic calculations, l: defines maths standard library
+    avg=$(echo $sum / $input | bc -l)
+    printf "% 0.3f" "$avg"
+    # echo $avg
+    
+  }
 
-echo $avg
+  func_result=$(validate)
+  echo $func_result
+
+else
+  echo "Length of list exceed 500"
+fi
+
+
+
+
+
+
+
+
+
+
+#  Method 1
+
+# echo "Enter Size(N)"
+# read N
+
+# if [ $N -le 500 ]
+# then
+#   count=1
+#   sum=0
+
+# echo "Enter Numbers"
+
+# while [ $count -le $N ]
+# do
+#   read num               #get number
+#   sum=$((sum + num))     #sum+=num
+#   count=$((count + 1))
+# done
+
+# avg=$(echo $sum / $N | bc -l)
+# echo $avg
+
+# else
+#   echo "Length of list exceed 500"
+# fi
+
+
 
 
 # Method 2
 
-echo "Enter Size(N)"
-read N
+# echo "Enter Size(N)"
+# read N
 
-count=1
-sum=0
+# count=1
+# sum=0
 
-echo "Enter Numbers"
-while [ $count -le $N ]
-do
-  read num               #get number
-  sum=$((sum + num))     #sum+=num
-  count=$((count + 1))
-done
+# echo "Enter Numbers"
+# while [ $count -le $N ]
+# do
+#   read num               #get number
+#   sum=$((sum + num))     #sum+=num
+#   count=$((count + 1))
+# done
 
-avg=$(echo $sum / $N | bc -l)
+# avg=$(echo $sum / $N | bc -l)
 
-printf '%0.3f' "$avg"
+# printf '%0.3f' "$avg"
