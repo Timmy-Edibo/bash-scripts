@@ -8,6 +8,6 @@ while read line || [ -n "$line" ];
 do 
     echo "$line"; 
 
-done < $file | cut -d ' ' -f 3
+done < $file | cut -d ' ' -f 3-4
 
-echo "Linux cut command is useful" | cut  -d ' ' -f 1,2,3
+# echo "Linux cut command is useful" | cut  -d ' ' -f 1,2,3
